@@ -1,23 +1,23 @@
 # Resources
 + README.md: this file.
-+ Data: 
-    + GDSC dataset, TCGA dataset, PDX dataset
++ Datasets: 
+    + GDSC, TCGA and PDX
     + Download from: https://drive.google.com/drive/folders/1CKswGNVdlRupZIAUw3yKyqkSn0NNhdyr?usp=sharing
 	
 # Source code
 ### Regression model
-+ Single omic
++ Single -omic data
 	+ GE
     + MUT
     + METH
-+ Multiple omics
++ Multiple -omic data
 	+ GE_MUT_METH
 	+ GEN_MUT
 	+ GE_METH
     + MUT_METH
 	
-### Clasifier model (To compare with Moli model)
-+ Multiple omics
+### Classification model (To compare with MOLI method)
++ Multiple -omic data
 	+ GE_MUT_METH
 	+ GEN_MUT
 	+ GE_METH
@@ -34,7 +34,7 @@
 
 # Step-by-step running
 ## Regression model:
-### Create data:
+### Create data
 `python preprocess.py --choice 0`
 
 choice:       0: create mixed test dataset       1: create saliency map dataset       2: create blind drug dataset       3: create blind cell dataset
@@ -50,11 +50,11 @@ To train a model using training data. The model is chosen if it gains the best M
 
 This returns the model and result files for the modelling achieving the best MSE for testing data throughout the training.2
 
-## Classifier model:
-### Create data:
+## Classification model:
+### Create data
 `python preprocess.py --choice 0`
 ### Train model 
-+ Need to run Regession model first to get the weight for the extract feature task
++ Need to run Regession model first to get the weight for the feature extraction task
 + Run end to end jupyter notebook file (remember change the correct data path)
 
 
